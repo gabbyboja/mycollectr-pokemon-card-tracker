@@ -15,9 +15,8 @@ function getCards(){
                 return;
             }
 
-            // =========================
             // CARDS
-            // =========================
+       
             let data = '';
 
             response.data.forEach(card => {
@@ -40,9 +39,8 @@ function getCards(){
 
             $("#tbody").hide().html(data).fadeIn();
 
-            // =========================
-            // SUMMARY
-            // =========================
+            // BREAKDOWN
+  
             let summary = `
             <div class="breakDown"><p>Breakdown</p></div>
             <div class="totalSpent br-flex"><p class="dot">Total Spent  :</p><p>₱${response.summary.totalSpent}</p></div>
@@ -83,7 +81,16 @@ function addNewCard(){
         dataType: 'json',
         success: function(response){
             if(response.status == 'success'){
-                alert(response.message);
+
+                const pokeLogo = document.getElementById('pokeLogo');
+
+                pokeLogo.src = 'assets/images/pokeball_loader.gif';
+
+                setTimeout(() => {
+                    pokeLogo.src = 'assets/images/pokeball_logo.png';
+                    alert(response.message);
+                }, 4300);
+
                 $("#cardName").val('');
                 $("#cardAmount").val('');
                 $("#cardQty").val('');
@@ -96,3 +103,30 @@ function addNewCard(){
     });
 }
 
+function cardType(type) {
+
+    const selection = document.querySelector('.selection');
+
+    if (type === 'card') {
+        selection.innerHTML = `
+        <div class="selection-item">Mint</div>
+        <div class="selection-item">NM</div>
+        <div class="selection-item">LM</div>
+        <div class="selection-item">MP</div>
+        <div class="selection-item">HP</div>
+        <div class="selection-item">DAMAGED</div>
+        `;
+    }
+    else if  (type === 'slab') {
+            selection.innerHTML = `
+        <div class="psa-comp"><img src="assets/images/psa_logo.png" alt=""></div>
+        <div class="beckkett-comp"><img src="assets/images/beckett_logo.jpg" alt=""></div>
+        <div class="tag-comp"><img src="assets/images/tag_logo.png" alt=""></div>
+        <div class="cgc-comp"><img src="assets/images/cgc_logo.png" alt=""></div>
+        `;
+}
+    else if (type === 'sealed') {
+        selection.innerHTML = ``;
+}
+
+}

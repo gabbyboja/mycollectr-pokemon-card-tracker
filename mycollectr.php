@@ -24,12 +24,19 @@
         <div id="tbody"class="cards-grid"></div>
 
         <div class="add-card add-card-grid">
-            <div class= "pokelogo"><img src="assets/images/pokemonlogo.png" alt=""></div>
+            <div class="pokelogo"><img id="pokeLogo" src="assets/images/pokeball_logo.png"></div>
             <input type="text" id="cardName" placeholder="Enter card name">
             <input type="date" id="dateAdded">
             <input type="text" id="cardAmount" placeholder="Enter amount">
             <input type="number" id="cardQty" placeholder="Enter quantity">
-            <button id="addCardBtn" class="add-btn" onclick="addNewCard()">ADD CARD</button>
+            <select name="pokemon" onchange="cardType(this.value)">
+            <option value="" disabled selected>-- Select Product Type --</option>
+            <option value="card">Card</option>
+            <option value="slab">Slab</option>
+            <option value="sealed">Sealed Product</option>
+            </select>
+            <div class="selection"></div>
+            <button id="addCardBtn" class="add-btn" onclick="addNewCard()">ADD</button>
 
         </div>
     </div>

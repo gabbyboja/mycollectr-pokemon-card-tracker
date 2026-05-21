@@ -55,7 +55,8 @@ body{
     gap: 15px;
     justify-content: center;
 
-    height: 230px;
+    height: 300px;
+    max-height: 400px;
     width: 205px;
     border: solid 1px #2b2b2b;
     border-radius: 10px;
@@ -148,14 +149,14 @@ font-weight: 900;
 
 .pokelogo {
     position: absolute; 
-    top: -20px;          
+    top: -26px;          
     left: 50%;
     transform: translateX(-50%);
 
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 
-    background-color: #0B0C0D; 
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,6 +171,41 @@ font-weight: 900;
     font-family: 'Pokemon';
     src: url('../fonts/PKMN RBYGSC.ttf') format('truetype');
 }
+
+.selection {
+    font-family: 'Pokemon', sans-serif;
+    color: #cfcfcf;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.selection-item {
+    margin: 0 2px;
+    border: 1px solid #d4d0d0;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.selection-item:hover{
+    color: #ffffff; 
+    border-color: #ffffff; 
+}
+
+
+.psa-comp img, .tag-comp img, .cgc-comp img, .beckkett-comp img {
+  width: 50px;
+  height: 20px;
+  margin: 0 2px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.psa-comp img:hover, .tag-comp img:hover, .cgc-comp img:hover, .beckkett-comp img:hover {
+  border: 2px solid #9e3131;
+}
+
+
 
 #addCardBtn {
     font-family: 'Pokemon', sans-serif;
