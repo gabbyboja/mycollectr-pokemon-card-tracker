@@ -24,7 +24,7 @@ A Pokémon card collection tracker inspired by Collectr.
 ![Home Page](assets/images/screenshots/home_screenshot.png)
 
 ### Breakdown Section & Adding Product Section
-![Add Card](assets/images/screenshots/adding_card_screenshot.png) ![Breakdown](assets/images/screenshots/breakdown_screenshot.png)
+![Add Card](assets/images/screenshots/breakdown_screenshot.png) ![Breakdown](assets/images/screenshots/adding_card_screenshot.png)
 
 ## Future Features
 
