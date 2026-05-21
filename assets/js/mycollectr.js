@@ -23,7 +23,7 @@ function getCards(){
 
                 data += `
                     <div class="card">
-                        <img src="assets/images/${card.amount}.webp" class="card-image">
+                        <img src="assets/images/${card.card_name}.webp" class="card-image">
 
                         <div class="card-info">
                             <div class="card-name">${card.card_name}</div>
@@ -45,8 +45,8 @@ function getCards(){
             <div class="breakDown"><p>Breakdown</p></div>
             <div class="totalSpent br-flex"><p class="dot">Total Spent  :</p><p>₱${response.summary.totalSpent}</p></div>
             <div class="cardCount br-flex"><p class="dot">Card Count  :</p><p>${response.summary.totalCards}</p></div>
-            <div class="slabCount br-flex"><p class="dot">Slab Count  :</p><p>${response.summary.slabCount}</p></div>
-            <div class="sealedProd br-flex"><p class="dot">Sealed  :</p><p>${response.summary.sealedProd}</p></div>
+            <div class="slabCount br-flex"><p class="dot">Slab Count  :</p><p>0</p></div>
+            <div class="sealedProd br-flex"><p class="dot">Sealed  :</p><p>0</p></div>
             <div class="dateStarted br-flex"><p class="dot">Date Started  :</p><p>${response.summary.firstPurchase}</p></div>
             `;
 
