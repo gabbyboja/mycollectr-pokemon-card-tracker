@@ -23,25 +23,8 @@ function getCards(){
 
                 data += `
                     <div class="card">
-                        <button class="delete-btn"onclick="openModal()">X</button>
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-
-                        <h2>Remove Card?</h2>
-                        <p>Are you sure you want to remove this card?</p>
-
-                        <div class="modal-buttons">
-                        <button onclick="confirmDelete()" class="confirm-btn">
-                            Confirm
-                        </button>
-
-                        <button onclick="closeModal()" class="cancel-btn">
-                            Cancel
-                        </button>
-                        </div>
-
-                    </div>
-                </div>
+                        <button class="delete-btn" onclick="deleteCard(this.dataset.name)"
+                        data-name="${card.card_name}">&times;</button>
                         <img src="assets/images/${card.card_name}.webp" class="card-image">
 
                         <div class="card-info">
@@ -149,15 +132,31 @@ function cardType(type) {
 
 }
 
-function openModal(){
-  document.getElementById('myModal').style.display = 'block';
-}
+function deleteCard(cardName) {
 
-function closeModal(){
-  document.getElementById('myModal').style.display = 'none';
-}
+    Swal.fire({
 
-function confirmDelete(){
-  
-  closeModal();
+        title: 'Remove card?',
+        text: `This will remove ${cardName} from your collection.`,
+
+        showCancelButton: true,
+
+        confirmButtonText: 'Delete',
+        cancelButtonText: 'Cancel',
+
+        customClass: {
+
+            popup: 'poke-popup',
+
+            title: 'poke-title',
+
+            htmlContainer: 'poke-text',
+
+            confirmButton: 'poke-confirm',
+
+            cancelButton: 'poke-cancel'
+        }
+
+    });
+
 }
