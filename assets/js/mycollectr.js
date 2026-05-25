@@ -23,6 +23,25 @@ function getCards(){
 
                 data += `
                     <div class="card">
+                        <button class="delete-btn"onclick="openModal()">X</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+
+                        <h2>Remove Card?</h2>
+                        <p>Are you sure you want to remove this card?</p>
+
+                        <div class="modal-buttons">
+                        <button onclick="confirmDelete()" class="confirm-btn">
+                            Confirm
+                        </button>
+
+                        <button onclick="closeModal()" class="cancel-btn">
+                            Cancel
+                        </button>
+                        </div>
+
+                    </div>
+                </div>
                         <img src="assets/images/${card.card_name}.webp" class="card-image">
 
                         <div class="card-info">
@@ -57,7 +76,7 @@ function getCards(){
 
 getCards();
 
-function addNewCard(){
+$('#addCardBtn').click(function(){
     var cardName = $("#cardName").val();
     var cardAmount = $("#cardAmount").val();
     var cardQty = $("#cardQty").val();
@@ -88,20 +107,19 @@ function addNewCard(){
 
                 setTimeout(() => {
                     pokeLogo.src = 'assets/images/pokeball_logo.png';
-                    alert(response.message);
+                    $("#cardName").val('');
+                    $("#cardAmount").val('');
+                    $("#cardQty").val('');
+                    $("#dateAdded").val('');
+                    getCards();
                 }, 4300);
-
-                $("#cardName").val('');
-                $("#cardAmount").val('');
-                $("#cardQty").val('');
-                $("#dateAdded").val('');
-                getCards();
+                
             } else {
                 alert("Error adding card.");
             }
         }
     });
-}
+});
 
 function cardType(type) {
 
@@ -129,4 +147,17 @@ function cardType(type) {
         selection.innerHTML = ``;
 }
 
+}
+
+function openModal(){
+  document.getElementById('myModal').style.display = 'block';
+}
+
+function closeModal(){
+  document.getElementById('myModal').style.display = 'none';
+}
+
+function confirmDelete(){
+  
+  closeModal();
 }

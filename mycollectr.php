@@ -36,7 +36,7 @@
             <option value="sealed">Sealed Product</option>
             </select>
             <div class="selection"></div>
-            <button id="addCardBtn" class="add-btn" onclick="addNewCard()">ADD</button>
+            <button id="addCardBtn" class="add-btn">ADD</button>
 
         </div>
     </div>
