@@ -1,6 +1,8 @@
 <?php
 clearstatcache();
+
 require_once "dbconfig.php";
+session_start();
 
 $type = $_POST['type'];
 
@@ -50,6 +52,10 @@ if ($type == 'add') {
 
     echo json_encode(utf8ize($data));
 }
+
+
+
+
 
 
 

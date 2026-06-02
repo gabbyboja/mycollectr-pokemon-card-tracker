@@ -4,21 +4,16 @@ body{
 
 .header-grid{
     display: grid;
-    grid-template-columns: 50px 200px 100px;
+    grid-template-columns: 200px;
       justify-content: center;
         border-bottom: 1px solid #2b2b2b;
         padding-bottom: 5px;
 }
-.my{
-    font-size: 30px;
-    color: white;
-    margin-top: 2px;
-    margin-left: 2px;
-}
+
 .author{
     font-size: 15px;
     color: white;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 

@@ -1,4 +1,4 @@
-<?php require_once "includes/dbconfig.php"; ?>
+<?php session_start(); if(!isset($_SESSION['token'])){ header('location: login.php');} require_once "includes/dbconfig.php"; ?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -13,9 +13,7 @@
 <body>
     <div>
         <div class="title header-grid">
-            <div class="my">MY</div>
-            <img src="assets/images/white-logo.png" alt="" width="200px">
-            <div class="author">by Gabriel Boja</div>
+            <img src="assets/images/newerlogo.png" alt="" width="215px" height="48px">
         </div>
     <div class="container-grid">
         
