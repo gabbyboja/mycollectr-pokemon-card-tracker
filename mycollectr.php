@@ -23,7 +23,10 @@
 
         <div class="add-card add-card-grid">
             <div class="pokelogo"><img id="pokeLogo" src="assets/images/pokeball_logo.png"></div>
-            <input type="text" id="cardName" placeholder="Enter card name">
+            <div class="card-search">
+                <input type="text" id="cardName" placeholder="Search Pokémon card..." autocomplete="off">
+                <div id="cardSearchResults"></div>
+            </div>
             <input type="date" id="dateAdded">
             <input type="text" id="cardAmount" placeholder="Enter amount">
             <input type="number" id="cardQty" placeholder="Enter quantity">

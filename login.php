@@ -1,4 +1,4 @@
-<?php session_start(); if(isset($_SESSION['token'])){ header('location: mycollectr.php');} require_once "includes/dbconfig.php"; ?>
+<?php session_start(); /*session_destroy();*/ if(isset($_SESSION['token'])){ header('location: mycollectr.php');} require_once "includes/dbconfig.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +32,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         </div>
                             <button id="login-btn" type="submit">Log in</button>
                         </form>
-                    <h5>Don't have an account? <a href="register.php">Register here</a></h5>
+                    <div class="register"><p>Don't have an account? <a href="register.php">Register here</a></p></div>
                     </div>
                 </div>
 
